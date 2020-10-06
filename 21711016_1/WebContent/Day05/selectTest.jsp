@@ -44,6 +44,8 @@
 		}
 		%>
 	</table><p>
-<a href ="inputForm.jsp">멤버입력</a>
+<a href ="inputForm.jsp">멤버입력</a>&nbsp;
+<a href ="update.jsp">멤버수정</a>
+
 </body>
 </html>
