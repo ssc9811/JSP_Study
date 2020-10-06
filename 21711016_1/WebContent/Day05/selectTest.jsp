@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h2>member 테이블에 레코드 표시</h2>
-	<table border ="1">
+	<table border ="1" width="600">
 		<tr>
 			<td>아이디</td>
 			<td>비밀번호</td>
@@ -45,7 +45,8 @@
 		%>
 	</table><p>
 <a href ="inputForm.jsp">멤버입력</a>&nbsp;
-<a href ="update.jsp">멤버수정</a>
+<a href ="update.jsp">멤버수정</a>&nbsp;
+<a href ="del.jsp">멤버삭제</a>
 
 </body>
 </html>
