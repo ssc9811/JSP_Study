@@ -23,5 +23,4 @@
 	pstmt.executeUpdate();
 	pstmt.close();
 	conn.close();
-	response.sendRedirect("guest.jsp");
 %>

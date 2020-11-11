@@ -14,7 +14,7 @@
 <table border="1" width="500">
 <%
 Class.forName("com.mysql.jdbc.Driver");
-Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb?serverTimezone=UTC","root","1234");
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspadb?serverTimezone=UTC","root","1234");
 String strSql = "select * from guest order by id desc";
 PreparedStatement pstmt = conn.prepareStatement(strSql);
 ResultSet rs = pstmt.executeQuery();
@@ -26,9 +26,11 @@ while(rs.next()){
 	Timestamp writeday = rs.getTimestamp("writeday");
 	String content = rs.getString("content");
 	%>
-	<tr><td><a href="mailto":<%=email %>"><%=name %></a>(<%=writeday %>)</td>
-	<td><a href="del.jsp?idx=<%=id %>">삭제</a></td></tr>
-	<tr><td colspan=2><%=content %></td></tr>
+	<tr>
+		<td><a href="mailto":<%=email %>"><%=name %></a>(<%=writeday %>)</td>
+		<td><a href="del.jsp?idx=<%=id %>">삭제</a></td>&nbsp;&nbsp;&nbsp;
+		<td><a href="edit.jsp?idx=<%=id %>">수정</a></td></tr>
+	<tr><td colspan=3><%=content %></td></tr>
 	<%
 }
 	rs.close();
