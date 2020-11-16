@@ -1,0 +1,109 @@
+<html>
+ <body>
+  <head>
+<SCRIPT LANGUAGE="JavaScript">
+function check_id()
+   {
+     window.open("check_id.jsp?id=" + document.member_form.id.value,"IDcheck","left=200,top=200,width=300,height=150,scrollbars=no,resizable=yes");
+   }
+//시험문제 [check_id.jsp?id=]
+   function Check()
+   {
+      if (!document.member_form.id.value)
+      {
+          alert("아이디를 입력하세요");    
+          document.member_form.id.focus();
+          return;
+      }
+
+      if (!document.member_form.name.value)
+      {
+          alert("이름을 입력하세요");    
+          document.member_form.name.focus();
+          return;
+      }
+
+      if (!document.member_form.pwd.value)
+      {
+          alert("비밀번호를 입력하세요");    
+          document.member_form.pwd.focus();
+          return;
+      }
+
+      if (!document.member_form.pwd_confirm.value)
+      {
+          alert("비밀번호확인을 입력하세요");    
+          document.member_form.pwd_confirm.focus();
+          return;
+      }
+
+      if (document.member_form.pwd.value != 
+            document.member_form.pwd_confirm.value)
+      {
+          alert("비밀번호가 일치하지 않습니다.\n다시 입력해주세요.");    
+          document.member_form.pwd.focus();
+          document.member_form.pwd.select();
+          return;
+      }
+
+      document.member_form.submit();
+   }
+
+</SCRIPT>   
+  </head>
+ <body>
+ <center>
+	<H2>회원 가입폼</H2>
+   <form  name="member_form" method="post" action="insert.jsp">
+   <!---------- 회원가입 입력 폼--------------->
+<TABLE border=1 cellspacing=0 cellpadding=2 bordercolor="cccccc"  width=600 >
+<col bgcolor="cccccc"  width=100 >
+        <tr>
+          <td width=150>▶ 아이디 :</td>
+          <td>
+             <input type=text size=20  maxlength=16 name=id> 
+             <input type=button value="중복 확인" onClick="check_id()" style='background-color:"#f5f5f5";height=20;font-size:9pt;border:black 1px solid;'> ▶ 영문숫자조합10~16자리
+          </td>
+        </tr>
+		 <tr><td width=150>▶ 비밀번호 :</td> 
+         <td>
+            <input type=password size=20 maxlength=16 name=pwd> ▶ 영문숫자조합10~16자리</td>
+        </tr>
+        <tr><td width=150>▶ 비밀번호 확인 :</td>
+          <td>
+             <input type=password size=20  maxlength=16 name=pwd_confirm> </td>
+        </tr>
+        <tr><td width=150>▶ 이름 :</td>
+          <td>
+             <input type=text size=20  maxlength=16 name=name> ▶ 실명(한글이름) </td>
+        </tr>
+        <tr><td width=150>▶ 휴대전화 :</td>
+          <td>
+             <input type=text size=4 name=phone1 value=010>
+            - <input type=text size=4  name=phone2 maxlength=4> 
+            - <input type=text size=4  name=phone3 maxlength=4>  
+          </td>
+        </tr>
+		 <tr><td width=150>성별 :</td>
+          <td>
+             <input type=radio name=sex value='남' checked>남
+             <input type=radio name=sex value='여'>여
+          </td>
+        </tr>
+		<tr><td width=150>이메일 :</td>
+          <td>
+             <input type=text size=50 name=email></td>
+        </tr>
+      <tr><td width=150> 주 소 :</td>
+          <td>
+             <input type=text size=50 name=address></td>
+      </tr>          
+    </table>
+        <br>
+		<input type='button' OnClick='Check()' value='회원가입'>
+		<INPUT TYPE="reset" value=다시쓰기>
+		<input type="button" value="취   소"  onClick="javascript:history.go(-1);">
+       </form>
+   	</center>
+  </body>
+</html>
