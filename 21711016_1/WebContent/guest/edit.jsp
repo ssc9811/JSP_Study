@@ -5,7 +5,7 @@
 <%
 	String idx = request.getParameter("idx");
 	Class.forName("com.mysql.jdbc.Driver");
-	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb?serverTimezone=UTC","root","1234");
+	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspadb?serverTimezone=UTC","root","1234");
 	String strSql="select * from guest where id ="+idx;
 	PreparedStatement pstm = conn.prepareStatement(strSql);
 	ResultSet rs = pstm.executeQuery();

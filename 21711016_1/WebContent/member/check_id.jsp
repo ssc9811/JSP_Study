@@ -16,7 +16,7 @@
 	ResultSet rs = pstmt.executeQuery();
 	if(!rs.next()){
 %>
-	<%= id %>는 사용할 수 있는아이디. <br><a href=javascript:close()>닫기</a>
+		<%= id %>는 사용할 수 있는아이디. <br><a href=javascript:close()>닫기</a>
 <%	}else{ %>
 	<%= id %>는 중복된 아이디 입니다.<br><a href=javascript:close()>닫기</a>
 <%} }%>

@@ -11,7 +11,7 @@
 	Timestamp reg = new Timestamp(System.currentTimeMillis());
 	
 	Class.forName("com.mysql.jdbc.Driver");
-	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb?serverTimezone=UTC", "root", "1234");
+	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspadb?serverTimezone=UTC", "root", "1234");
 	String sql = "insert into guest(name, pwd, email, content, writeday) values (?,?,?,?,?)";
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 	
