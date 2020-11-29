@@ -9,7 +9,7 @@
 		<a href=javascript:close()>닫기</a>
 	<% }else{
 	Class.forName("com.mysql.jdbc.Driver");
-	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspadb?serverTimezone=UTC", "root", "1234");
+	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb?serverTimezone=UTC","root","1234");
 	String sql = "select id from member where id = ?";
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1,id);

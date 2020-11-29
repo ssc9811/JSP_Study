@@ -6,7 +6,7 @@
 	String id = request.getParameter("id");
 	String pwd = request.getParameter("pwd");
 	Class.forName("com.mysql.jdbc.Driver");
-	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspadb?serverTimezone=UTC", "root", "1234");
+	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb?serverTimezone=UTC","root","1234");
 	String strSQL = "select * from member where id = ?";
 	PreparedStatement pstmt = conn.prepareStatement(strSQL);
 	pstmt.setString(1,id);
@@ -32,7 +32,7 @@
 		session.setAttribute("member_name",username);
 		%>
 		<script language="javascript">
-			location.href="login_check.jsp";
+			location.href="main.jsp";
 		</script>
 <%		}
 	}

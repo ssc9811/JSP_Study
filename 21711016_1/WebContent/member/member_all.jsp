@@ -3,13 +3,13 @@
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("euc-kr"); %>
 <%
-	String mem_id = (String)session.getAttribute("member_id");
+	String idx = request.getParameter("idx");
 
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb?serverTimezone=UTC","root","1234");
-	String sql = "select * from member where id = ?";
+	String sql = "select * from member where num = ?";
 	PreparedStatement pstmt = conn.prepareStatement(sql);
-	pstmt.setString(1,mem_id);
+	pstmt.setString(1,idx);
 	ResultSet rs = pstmt.executeQuery();
 	
 	rs.next();
@@ -86,9 +86,7 @@
 <table width="500" border="0" cellpading="3" cellspacing="0" align="center">
 <tr>
 <td align="center">
-<input type="button" value="확인" onclick="location='login_check.jsp'">
-<input type="button" value = "회원 수정" onclick="location='edit.jsp'">
-<input type="button" value = "회원 탈퇴" onclick="location='del.jsp'">
+<a href = "member_list.jsp">[회원 리스트로]</a>
 </td>
 </tr>
 </table>

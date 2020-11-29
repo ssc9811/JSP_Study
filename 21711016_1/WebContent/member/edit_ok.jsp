@@ -12,7 +12,7 @@
 	String address = request.getParameter("address");
 	
 	Class.forName("com.mysql.jdbc.Driver");
-	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspadb?serverTimezone=UTC","root","1234");
+	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb?serverTimezone=UTC","root","1234");
 	String sql = "update member set pwd=?, name=?, tel=?, sex=?, email=?, address=? where id = ?";
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1,pwd);
